@@ -45,7 +45,6 @@ public class StaticBag implements Bag {
 			this.elements[this.currentSize++] = obj;
 	}
 
-	@Override
 	public boolean erase(Object obj) {
 		for (int i = 0; i < this.size(); i++)
 		{
@@ -60,7 +59,6 @@ public class StaticBag implements Bag {
 		return false;
 	}
 
-	@Override
 	public int eraseAll(Object obj) {
 		int result = 0;
 		while (this.erase(obj))
@@ -69,7 +67,6 @@ public class StaticBag implements Bag {
 		return result;
 	}
 
-	@Override
 	public void clear() {
 		for (int i = 0; i < this.size(); i++)
 			this.elements[i] = null;
@@ -77,12 +74,10 @@ public class StaticBag implements Bag {
 
 	}
 
-	@Override
 	public int size() {
 		return this.currentSize;
 	}
 
-	@Override
 	public int count(Object obj) {
 		int counter = 0;
 		for (int i = 0; i < this.size(); i++)
@@ -93,22 +88,18 @@ public class StaticBag implements Bag {
 		return counter;
 	}
 
-	@Override
 	public boolean isMember(Object obj) {
 		return this.count(obj) > 0;
 	}
 
-	@Override
 	public boolean isEmpty() {
 		return this.size() == 0;
 	}
 
-	@Override
 	public Iterator iterator() {
 		return new BagIterator();
 	}
 
-	@Override
 	public Bag moreFrequentThan(Object obj) {
 		Bag Bag2 = new StaticBag(currentSize);
 		for (Object object : this) {
